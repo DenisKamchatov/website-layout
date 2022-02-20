@@ -1,0 +1,90 @@
+$header-color: rgb(255, 255, 255);
+$blue-color: #2378FC;
+$sea-color: #30BCC9;
+$yellow-color: #FFC41E;
+$red-color: #F6404F;
+$icecream-color: #FAF3E3;
+$grey-color: #2E373B;
+$lightgrey-color: #E0E0E0;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+
+@mixin margin-padding($margin, $padding) {
+    margin: $margin;
+    padding: $padding;
+}
+@mixin display-direction($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+@mixin width-height-bgcolor($width, $height, $bgcolor) {
+    width: $width;
+    height: $height;
+    background-color: $bgcolor;
+}
+
+@mixin width-margin {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@mixin padding-left-right {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import './data-container';
+@import './basic-styles';
+@import './first-container';
+@import './second-container';
+@import './third-container';
+@import './fourth-container';
+
+.container {
+    width: 100%;
+    @include margin-padding(0, 0);
+    @include display-direction(column);
+
+}
+
+.padding-left-right {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.mini-container {
+    width: 100%;
+    @include display-direction(row);
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include width-margin();
+    @include display-direction(row);
+    color: $header-color;
+    justify-content: space-between;
+    align-items: center;
+    @include padding-left-right();
+    @media (max-width: $screen-sm-max) {
+        flex-direction: column;
+        align-items: center;
+        .main-nav {
+            flex-wrap: wrap
+        }
+    }
+    .main-nav {
+        @include display-direction(row);
+    }
+    li:not(:first-child) {
+        margin-left: 40px;
+    }
+}
+

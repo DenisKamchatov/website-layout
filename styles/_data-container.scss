@@ -1,0 +1,116 @@
+.data-container {
+    color: $header-color;
+    @include display-direction(row);
+    @include width-margin();
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    align-items: flex-end;
+    @include padding-left-right();
+
+    @media (max-width: $screen-sm-max) {
+        flex-direction: column;
+        align-items: center;
+        .left-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .Expoforum {
+                font-size: 2em;
+            }
+        }
+        .right-container {
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
+            .tr-container{
+                margin-top: 20px;
+            }
+            .bl-container{
+                margin-top: 20px;
+            }
+            .br-container{
+                margin-top: 20px;
+            }
+        }
+    }
+    @media (min-width: $screen-md) {
+        .right-left-container {
+            margin-right: 20px;
+        }
+        .tl-container{
+            margin-bottom: 20px;
+        }
+        .tr-container{
+            margin-bottom: 20px;
+        }
+        .Expoforum {
+            font-size: 3em;
+        }
+    }
+
+    @media (max-width: $screen-md-max) {
+        flex-direction: column;
+        align-items: center;
+        .left-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .right-container {
+            margin-top: 30px;
+        }
+    }
+    .left-container {
+        align-self: flex-start;
+        .typography {
+            font-size: 1.2em;
+        }
+    }
+    .right-container {
+        display: flex;
+        .right-left-container {
+            @include display-direction(column);
+
+        }
+        .right-right-container {
+            @include display-direction(column);
+        }
+        .tl-container{
+            padding: 20px;
+            background-color: $blue-color;
+            width: 200px;
+            height: 100px;
+
+            @include display-direction(column);
+            justify-content: space-between;
+        }
+        .tr-container{
+            padding: 20px;
+            background-color: $sea-color;
+            width: 200px;
+            height: 100px;
+
+            @include display-direction(column);
+            justify-content: space-between;
+        }
+        .bl-container{
+            padding: 20px;
+            background-color: $yellow-color;
+            width: 200px;
+            height: 100px;
+            @include display-direction(column);
+            justify-content: space-between;
+        }
+        .br-container{
+            padding: 20px;
+            background-color: $red-color;
+            width: 200px;
+            height: 100px;
+            @include display-direction(column);
+            justify-content: space-between;
+        }
+    }
+}

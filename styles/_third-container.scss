@@ -1,0 +1,93 @@
+.mini-container-third {
+    width: 100%;
+    background-color: $icecream-color;
+}
+.third-container {
+    @include margin-padding(0, 0);
+    @include display-direction(row);
+    @include width-margin();
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @include padding-left-right();
+
+    @media (max-width: $screen-sm-max) {
+        flex-direction: column;
+        align-items: center;
+        .bottom-image {
+            margin-top: 20px;
+        }
+        .third-right-container {
+            margin-top: 20px;
+        }
+    }
+    @media (min-width: $screen-lg) {
+        .third-left-container {
+            padding-right: 60px;
+        }
+        .third-right-container {
+            padding-left: 60px;
+        }
+        img {
+            max-width: 400px;
+        }
+    }
+    @media (max-width: $screen-md-max) {
+        flex-direction: column;
+        align-items: center;
+        .bottom-image {
+            margin-top: 20px;
+        }
+        .third-right-container {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 700px;
+        }
+    }
+    a {
+        color: $grey-color;
+        border-bottom: 1.5px solid black;
+    }
+    h2 {
+        @include margin-padding(0, 0);
+        font-size: 1.2em;
+    }
+    img {
+        height: auto;
+        width: 100%;
+    }
+    .third-left-container {
+        @include display-direction(column);
+        justify-content: space-between;
+    }
+    .third-right-container {
+        @include display-direction(column);
+        justify-content: space-between;
+        min-height: 500px;
+        max-width: 400px;
+        color: $grey-color;
+        span {
+            color: $red-color;
+        }
+        .third-right-container-top {
+            @include display-direction(row);
+            justify-content: space-between;
+        }
+
+        .third-right-container-bottom {
+            @include display-direction(column);
+            justify-content: space-between;
+            max-width: 600px;
+            min-height: 450px;
+            .third-right-container-bottom-row {
+                @include display-direction(row);
+                justify-content: space-around;
+                align-items: center;
+                .third-right-container-bottom-row-text {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
